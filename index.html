@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <script>
+
+     var map;
+
+     function makeMap(lat, long) {
+       var latlng = new google.maps.LatLng(lat, long);
+       var options = {
+         zoom: 4,
+         center: latlng,
+         styles: [{"stylers":[{"visibility":"on"},{"saturation":-100},{"gamma":0.54}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"color":"#4d4946"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"gamma":0.48}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"gamma":7.18}]}],
+       };
+
+       map = new google.maps.Map(document.getElementById("map"), options);
+     }
+
+     function printCoords() {
+       num_coords = $('table tbody tr').length
+       var cTable = document.getElementById("cTable")
+       for (i = 0; i < num_coords; i++)
+         lng = cTable.rows[i].cells[0].textContent
+         lat = cTable.rows[i].cells[1].textContent
+        document.write(lat + "\t, " + lng + "\n")
+     }					  
+
+     function placeMarkers() {
+       num_coords = $('table tbody tr').length
+       var cTable = document.getElementById("cTable")
+       for (i = 0; i < num_coords; i++) {
+         lng = cTable.rows[i].cells[0].textContent
+         lat = cTable.rows[i].cells[1].textContent
+	 text = cTable.rows[i].cells[2].textContent
+         var myLatlng = new google.maps.LatLng(lat,lng);
+
+	var pinImage = new google.maps.MarkerImage("new_marker.png");
+
+	 var marker = new google.maps.Marker({
+	   position: myLatlng,
+	   icon: pinImage,
+	   map: map,
+	   title: text
+	 });
+       }
+     }					  
+
+
+   $(document).ready(function () {
+     $('#cTable').hide()
+     
+     makeMap(39, -100)
+     placeMarkers()
+
+   });
+
+  </script>
+  <style>
+
+#par2 {
+	margin: 0 auto;
+	width: 800px;
+	box-shadow: 10px 10px 5px #888888;
+	
+
+}
+
+
+#par {
+	margin: 0 auto;
+	width: 800px;
+	font-family: Georgia;
+	background-color: white;
+	color: black;
+	text-decoration:none;
+	word-wrap: break-word;
+	box-shadow: 10px 10px 5px #888888;
+	border-radius: 5px;
+}
+
+#par p{
+
+	padding-left: 20px;
+}
+
+body {
+	background-color:black
+}
+
+#par h1 {
+	padding-top: 20px;
+	font-family: Fantasy;
+	color: #DAA520;
+}
+  	
+  </style>
+  
+  
+</head>
+
+<body>
+<div id="par2">
+	<div id = "map" style="height: 390px" ></div></div><table id = "cTable">
+<tr id = "coord0">
+<td id = "lng">-97.17907459</td><td id = "lat">31.60857738</td>
+<td>kendrick lamar🙌👏</td>
+</tr>
+<tr id = "coord1">
+<td id = "lng">-66.213799</td><td id = "lat">18.4032568</td>
+<td>Kendrick Lamar // Pussy &amp; Patron 💪💪💪</td>
+</tr>
+<tr id = "coord2">
+<td id = "lng">-85.2692051</td><td id = "lat">35.1258089</td>
+<td>kendrick Lamar is really my baby</td>
+</tr>
+<tr id = "coord3">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>The Spiteful Chant Feat. SchoolBoy Q★ ☛Kendrick Lamar☚ ★Section.80★</td>
+</tr>
+<tr id = "coord4">
+<td id = "lng">4.4343476</td><td id = "lat">51.2276386</td>
+<td>Kendrick Lamar c'est le nouveaux KING</td>
+</tr>
+<tr id = "coord5">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>R.O.T.C {Interlude} ft Bj The Chicago Kid★ ☛Kendrick Lamar☚ ★O(verly) D(edicated)★</td>
+</tr>
+<tr id = "coord6">
+<td id = "lng">-85.2692078</td><td id = "lat">35.1257732</td>
+<td>Brother came in her playing Money Trees x Kendrick Lamar I said ughhh turn that shit off 😂✋✋✋✋✋ tf .</td>
+</tr>
+<tr id = "coord7">
+<td id = "lng">11.3592677</td><td id = "lat">43.979602</td>
+<td>I can hear Kendrick Lamar through the headphones of the Italian  guy sitting next to me on this train to Florence... rad</td>
+</tr>
+<tr id = "coord8">
+<td id = "lng">-72.6706887</td><td id = "lat">41.8476124</td>
+<td>When you're home alone listening to The Art of Peer Pressure by Kendrick Lamar and you hear a noise &lt;&lt;&lt;&lt;
+My ass went and grabbed a knife</td>
+</tr>
+<tr id = "coord9">
+<td id = "lng">-85.03466416</td><td id = "lat">35.12908622</td>
+<td>Kendrick Lamar's Control verse: http://t.co/j2T2BvntbJ</td>
+</tr>
+<tr id = "coord10">
+<td id = "lng">4.434375</td><td id = "lat">51.227643</td>
+<td>Kendrick Lamar x Jay z // Bitch Dant kill my vibe</td>
+</tr>
+<tr id = "coord11">
+<td id = "lng">-94.60518473</td><td id = "lat">32.51173419</td>
+<td>“@johnQ903: @Shelbi_Breanna listen to collard greens by school boy q ft kendrick lamar” yes bro. Yes!</td>
+</tr>
+<tr id = "coord12">
+<td id = "lng">28.0601564</td><td id = "lat">-26.1059362</td>
+<td>Some call it London Bridge some call it Kendrick Lamar  but I call it British Empire #Hairstyles #NetVirKontolola http://t.co/58yMrcZgm2</td>
+</tr>
+<tr id = "coord13">
+<td id = "lng">-72.65751737</td><td id = "lat">41.8444738</td>
+<td>Kendrick Lamar seriously ruined our pep rally this year. Kinda fucking bitter😐</td>
+</tr>
+<tr id = "coord14">
+<td id = "lng">2.6830616</td><td id = "lat">48.836247</td>
+<td>Kendrick Lamar</td>
+</tr>
+<tr id = "coord15">
+<td id = "lng">18.67987</td><td id = "lat">-34.03776</td>
+<td>Kendrick Martin, Hootie Malcolm! "@Lakhoy_Zee: YG Hootie - 2 Presidents (Feat. Kendrick Lamar)"</td>
+</tr>
+<tr id = "coord16">
+<td id = "lng">2.0743272</td><td id = "lat">48.7739157</td>
+<td>J.Cole et Kendrick Lamar ils mettent quelles sauces dans leur grecs pour être aussi fort ? Ils ont atteint un niveau de divinité jamais vu</td>
+</tr>
+<tr id = "coord17">
+<td id = "lng">-121.39669124</td><td id = "lat">38.61906355</td>
+<td>Kendrick Lamar 🙌🙌🙌🙌🙌🙌</td>
+</tr>
+<tr id = "coord18">
+<td id = "lng">-61.0434005</td><td id = "lat">14.6280492</td>
+<td>Kendrick Lamar - Growing Apart *NEW July 2010* : http://t.co/AAG7VrRz9z</td>
+</tr>
+<tr id = "coord19">
+<td id = "lng">-61.0433939</td><td id = "lat">14.6280531</td>
+<td>Flying Lotus - Never Catch Me ft. Kendrick Lamar : http://t.co/C5Q2wMd1CY</td>
+</tr>
+<tr id = "coord20">
+<td id = "lng">-86.5101474</td><td id = "lat">34.8298262</td>
+<td>Never Catch Me | Flying Lotus + Kendrick Lamar</td>
+</tr>
+<tr id = "coord21">
+<td id = "lng">2.1213721</td><td id = "lat">49.4024276</td>
+<td>Les deux albums que j'attends perso c'est celui de Kendrick Lamar &amp; le projet de Dinos</td>
+</tr>
+<tr id = "coord22">
+<td id = "lng">-87.6287143</td><td id = "lat">41.8854829</td>
+<td>Chris Brown and kendrick lamar x Autumn leaves😊😊😊😊</td>
+</tr>
+<tr id = "coord23">
+<td id = "lng">-82.9949033</td><td id = "lat">39.9800477</td>
+<td>@jjlapp i heard Kendrick Lamar performing a concert outside the arena along with kev Hart and #ESPN</td>
+</tr>
+<tr id = "coord24">
+<td id = "lng">115.16286</td><td id = "lat">-8.68416</td>
+<td>Swimming Pools (Drank) by Kendrick Lamar (with Ginna and Indah at La Favela) — https://t.co/fdBXgUWdYi</td>
+</tr>
+<tr id = "coord25">
+<td id = "lng">-75.73626475</td><td id = "lat">39.68156999</td>
+<td>I like this Kendrick Lamar song tho</td>
+</tr>
+<tr id = "coord26">
+<td id = "lng">-88.81714155</td><td id = "lat">30.4334017</td>
+<td>Kendrick Lamar so trash</td>
+</tr>
+<tr id = "coord27">
+<td id = "lng">-88.81700133</td><td id = "lat">30.43346788</td>
+<td>need to find those dudes at the chill last night on twitter.... They said Kendrick Lamar is better than Drake.</td>
+</tr>
+<tr id = "coord28">
+<td id = "lng">-88.81700133</td><td id = "lat">30.43346788</td>
+<td>need to find those dudes at the chill last night on twitter.... They said Kendrick Lamar is better than Drake.</td>
+</tr>
+<tr id = "coord29">
+<td id = "lng">-86.0144012</td><td id = "lat">34.0259659</td>
+<td>Money Trees #iHeartRadio #NowPlaying http://t.co/QfxkeQSI8w @kendricklamar Lets get to this money money 2 be made♥♥ http://t.co/M8iqcr8vV0</td>
+</tr>
+<tr id = "coord30">
+<td id = "lng">-99.18155574</td><td id = "lat">19.43460636</td>
+<td>Kendrick Lamar miamor por ti 💕</td>
+</tr>
+<tr id = "coord31">
+<td id = "lng">-80.866691</td><td id = "lat">35.0356845</td>
+<td>"You should either hear me now or go deaf.. or end up dead, die trying and know death" - Kendrick Lamar</td>
+</tr>
+<tr id = "coord32">
+<td id = "lng">-106.01152425</td><td id = "lat">39.46396554</td>
+<td>Little Kendrick Lamar to set the tone to my ski day and I guess my season as well! 🎶 #nowornever
+http://t.co/EjOLoQUwm2</td>
+</tr>
+<tr id = "coord33">
+<td id = "lng">-97.27030572</td><td id = "lat">32.91011324</td>
+<td>Kendrick Lamar &gt;</td>
+</tr>
+<tr id = "coord34">
+<td id = "lng">-46.6647419</td><td id = "lat">-23.6651119</td>
+<td>Chris Brown ft. Kendrick Lamar - Autumn Leaves &lt;3</td>
+</tr>
+<tr id = "coord35">
+<td id = "lng">1.44305634</td><td id = "lat">47.69836088</td>
+<td>Backwares x kendrick lamar</td>
+</tr>
+<tr id = "coord36">
+<td id = "lng">-112.09221433</td><td id = "lat">33.38891276</td>
+<td>Kendrick lamar top 5 too</td>
+</tr>
+<tr id = "coord37">
+<td id = "lng">-84.17284657</td><td id = "lat">39.73911799</td>
+<td>College by Kendrick Lamar: pour up: nap, headshot: nap, sit down: nap, stand up: nap, pass out: nap, wake up: nap, faded: nap, faded: nap</td>
+</tr>
+<tr id = "coord38">
+<td id = "lng">-76.93689849</td><td id = "lat">38.70123617</td>
+<td>Go check out @RealKingCalii "M.A.A.D City" Freestyle 🔥😩🙌💓https://t.co/GICzCUZzlG</td>
+</tr>
+<tr id = "coord39">
+<td id = "lng">-76.93689849</td><td id = "lat">38.70123617</td>
+<td>Go check out @RealKingCalii "M.A.A.D City" Freestyle 🔥😩🙌💓https://t.co/GICzCUZzlG</td>
+</tr>
+<tr id = "coord40">
+<td id = "lng">-0.90845405</td><td id = "lat">51.03163315</td>
+<td>i by kendrick lamar 🙌👌 #sogood</td>
+</tr>
+<tr id = "coord41">
+<td id = "lng">2.45371967</td><td id = "lat">48.69797504</td>
+<td>#np Jasmine V ft Kendrick Lamar - Thatâs Me Right There</td>
+</tr>
+<tr id = "coord42">
+<td id = "lng">-1.6959881</td><td id = "lat">37.6675199</td>
+<td>Kendrick Lamar - i (Audio): http://t.co/us9HMH9EWc I LOVE MYSEEEEEELF</td>
+</tr>
+<tr id = "coord43">
+<td id = "lng">2.6067695</td><td id = "lat">48.8493996</td>
+<td>#Np Kendrick Lamar - Don't kill my vibe</td>
+</tr>
+<tr id = "coord44">
+<td id = "lng">0.0</td><td id = "lat">0.0</td>
+<td>Never like Kendrick Lamar Music.</td>
+</tr>
+<tr id = "coord45">
+<td id = "lng">-95.9932997</td><td id = "lat">36.2089482</td>
+<td>We need to pump (promote) this song!! Kendrick Lamar - I Love Myself [Official Audio] HD: http://t.co/4vfOGLPjm3</td>
+</tr>
+<tr id = "coord46">
+<td id = "lng">30.1621538</td><td id = "lat">-23.8249789</td>
+<td>Kendrick Lamar, drake and yeezy</td>
+</tr>
+<tr id = "coord47">
+<td id = "lng">110.82046</td><td id = "lat">-7.56337</td>
+<td>Now Or Never (feat. Mary J. Blige) by Kendrick Lamar (at Keraton Mangkunegaran) — https://t.co/yEjlkkel1s</td>
+</tr>
+<tr id = "coord48">
+<td id = "lng">-90.03714615</td><td id = "lat">29.9868314</td>
+<td>Fuck Kendrick Lamar the original #JanetJackson #Anytime #Anyplace @ #H99D Da Crib http://t.co/w3ZHhGm1yo</td>
+</tr>
+<tr id = "coord49">
+<td id = "lng">-96.77064515</td><td id = "lat">32.94628244</td>
+<td>I still remember when I'd introduce people to Kendrick Lamar, would you look at him now!</td>
+</tr>
+<tr id = "coord50">
+<td id = "lng">18.6284447</td><td id = "lat">-34.0070763</td>
+<td>AB-Soul | Turn Me Up Ft Kendrick Lamar "@IamFADA_: ►Ab-Soul | End Is Near ft Mac Miller"</td>
+</tr>
+<tr id = "coord51">
+<td id = "lng">11.5548811</td><td id = "lat">3.8373529</td>
+<td>The art of peer pressure - Kendrick Lamar</td>
+</tr>
+<tr id = "coord52">
+<td id = "lng">36.7619679</td><td id = "lat">-1.3885846</td>
+<td>I love myself..
+Kendrick lamar</td>
+</tr>
+<tr id = "coord53">
+<td id = "lng">-117.4594534</td><td id = "lat">33.97229354</td>
+<td>@brittneeeeeey you dont smoke tho .. Ms Kendrick lamar.. "Ion een smoke 🎶"</td>
+</tr>
+<tr id = "coord54">
+<td id = "lng">27.27022</td><td id = "lat">-25.62021</td>
+<td>Chris Brown ft Kendrick Lamar - Autumn Leaves ♥♥♥</td>
+</tr>
+<tr id = "coord55">
+<td id = "lng">11.5542024</td><td id = "lat">3.8366859</td>
+<td>Bon ce matin C'est Kendrick lamar,Jayz,SchoolboyQ,Drake.</td>
+</tr>
+<tr id = "coord56">
+<td id = "lng">106.77785</td><td id = "lat">-6.28998</td>
+<td>Bitch, Don’t Kill My Vibe (feat. Emeli Sandé) by Kendrick Lamar (at Ganesha Education) — https://t.co/dfVQEjUyi8</td>
+</tr>
+<tr id = "coord57">
+<td id = "lng">18.4859625</td><td id = "lat">-33.839224</td>
+<td>kendrick lamar poe mans dreams</td>
+</tr>
+<tr id = "coord58">
+<td id = "lng">-79.7776305</td><td id = "lat">34.5637868</td>
+<td>Kendrick Lamar x Sing About Me  🙌🎧</td>
+</tr>
+<tr id = "coord59">
+<td id = "lng">-89.5885728</td><td id = "lat">40.680207</td>
+<td>So were Kendrick Lamar been??</td>
+</tr>
+<tr id = "coord60">
+<td id = "lng">-86.6999898</td><td id = "lat">36.0459138</td>
+<td>#Imagine Dragons Ft. #Kendrick Lamar ☆ Radioactiv…: http://t.co/Z3Ozf2fK8p</td>
+</tr>
+<tr id = "coord61">
+<td id = "lng">31.8495832</td><td id = "lat">-28.8513823</td>
+<td>Detail on the hook 👌👌💯 💃"@Neo_QTAT: RichGang ft Kendrick Lamar // 100 favours,  Turnup playlist to wake me up"</td>
+</tr>
+<tr id = "coord62">
+<td id = "lng">-82.41623213</td><td id = "lat">28.05416353</td>
+<td>Ghetto Walmart &amp; Nebraska Ave at midnight while blasting Kendrick Lamar👌 #GoodDecisions</td>
+</tr>
+<tr id = "coord63">
+<td id = "lng">-117.35290635</td><td id = "lat">33.94683554</td>
+<td>@MrGold47 look out for detox -Kendrick Lamar</td>
+</tr>
+<tr id = "coord64">
+<td id = "lng">-89.78492908</td><td id = "lat">30.25038397</td>
+<td>Kendrick Lamar needs to make a mixtape asap</td>
+</tr>
+<tr id = "coord65">
+<td id = "lng">-77.3148836</td><td id = "lat">38.78982554</td>
+<td>Kendrick Lamar http://t.co/2QKrpXZHY4</td>
+</tr>
+<tr id = "coord66">
+<td id = "lng">-61.5722029</td><td id = "lat">16.2597761</td>
+<td>Kendrick Lamar - Swimming Pool</td>
+</tr>
+<tr id = "coord67">
+<td id = "lng">-61.5721992</td><td id = "lat">16.2597785</td>
+<td>Un petit son de Kendrick Lamar pour faire monter mon tchad encore plus</td>
+</tr>
+<tr id = "coord68">
+<td id = "lng">-77.31522352</td><td id = "lat">38.78978093</td>
+<td>Kendrick Lamar=Late night move</td>
+</tr>
+<tr id = "coord69">
+<td id = "lng">-110.9518155</td><td id = "lat">31.2629461</td>
+<td>y unas buenas rolitas de kendrick lamar tambien ayudan.</td>
+</tr>
+<tr id = "coord70">
+<td id = "lng">-101.8126153</td><td id = "lat">33.5679029</td>
+<td>Kendrick Lamar be having me like 😸💦💦💦💦</td>
+</tr>
+<tr id = "coord71">
+<td id = "lng">-80.0479226</td><td id = "lat">32.9975305</td>
+<td>@jacobxjake I was kinda picturing him like a Kendrick Lamar kinda look lol</td>
+</tr>
+<tr id = "coord72">
+<td id = "lng">-67.9948586</td><td id = "lat">10.2355073</td>
+<td>Kendrick Lamar ft. Kendrick Lamar</td>
+</tr>
+<tr id = "coord73">
+<td id = "lng">-89.720915</td><td id = "lat">35.1571338</td>
+<td>I just used Shazam to discover Autumn Leaves by Chris Brown Feat. Kendrick Lamar. http://t.co/bXDzqs6vXu straight banger right here</td>
+</tr>
+<tr id = "coord74">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>Chapter Six★ ☛Kendrick Lamar☚ ★Section.80★</td>
+</tr>
+<tr id = "coord75">
+<td id = "lng">-87.6083155</td><td id = "lat">41.543818</td>
+<td>Kendrick Lamar puts me in my fuckin zone man .. 😈💫🔮</td>
+</tr>
+<tr id = "coord76">
+<td id = "lng">-86.59474916</td><td id = "lat">30.47876037</td>
+<td>Someone take me to see Kendrick Lamar</td>
+</tr>
+<tr id = "coord77">
+<td id = "lng">-90.610669</td><td id = "lat">38.7581453</td>
+<td>@Logic301 haven't heard anyone this hungry on a debut album since Kendrick Lamar.... We need this... #RealHipHop #LogicAlbum</td>
+</tr>
+<tr id = "coord78">
+<td id = "lng">-76.8158976</td><td id = "lat">17.9825896</td>
+<td>T.I. ft Kendrick lamar, b.o.b , Kris Stephens - memories back then♫</td>
+</tr>
+<tr id = "coord79">
+<td id = "lng">-82.4045298</td><td id = "lat">32.2249389</td>
+<td>Kendrick Lamar x blow my high.</td>
+</tr>
+<tr id = "coord80">
+<td id = "lng">-117.25079751</td><td id = "lat">34.14119147</td>
+<td>I swear I love Kendrick Lamar's voice sooo much</td>
+</tr>
+<tr id = "coord81">
+<td id = "lng">-81.52213096</td><td id = "lat">41.07622237</td>
+<td>KENDRICK Lamar is doing a free concert at the cavs opener next Thursday! It's a must to go</td>
+</tr>
+<tr id = "coord82">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>Ignorance Is Bliss★ ☛Kendrick Lamar☚ ★O(verly) D(edicated)★</td>
+</tr>
+<tr id = "coord83">
+<td id = "lng">-73.21890578</td><td id = "lat">41.21103237</td>
+<td>Favorite Rappers : Casey Veggies, Kendrick Lamar, Logic, Childish Gambino, &amp; SchoolBoy Q 🙌🎵💭</td>
+</tr>
+<tr id = "coord84">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>Bitch, Dant Kill My Vibe★ ☛Kendrick Lamar☚ ★Good Kid M.A.A.D City-(Deluxe Edition)★</td>
+</tr>
+<tr id = "coord85">
+<td id = "lng">-76.29107959</td><td id = "lat">36.92697583</td>
+<td>“@HitsonHits: Kendrick Lamar dropped "Good Kid, M.A.A.D City" two years ago today http://t.co/4pj1XGqow3” DAMN IT WAS LIKE YESTERDAY</td>
+</tr>
+<tr id = "coord86">
+<td id = "lng">-93.41020471</td><td id = "lat">45.26256303</td>
+<td>“@RareHipHopPic: Kendrick Lamar's "Good Kid, M.A.A.D City" dropped two years ago today http://t.co/AIAt7RZhyF” SO CRAZY!!!!</td>
+</tr>
+<tr id = "coord87">
+<td id = "lng">-86.6999556</td><td id = "lat">36.0459298</td>
+<td>#Kendrick Lamar ☆ i ™Screwed By Willie A Holman: http://t.co/rB129WlPJg</td>
+</tr>
+<tr id = "coord88">
+<td id = "lng">-99.74960179</td><td id = "lat">34.29278016</td>
+<td>@J_daddy98 shut up kendrick lamar</td>
+</tr>
+<tr id = "coord89">
+<td id = "lng">-81.35038932</td><td id = "lat">41.14827845</td>
+<td>Kendrick Lamar showed up tonight for chance the rapper... Knew I should have went.</td>
+</tr>
+<tr id = "coord90">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>P&amp;P 1.5 ft Ab-Soul★ ☛Kendrick Lamar☚ ★O(verly) D(edicated)★</td>
+</tr>
+<tr id = "coord91">
+<td id = "lng">174.68647939</td><td id = "lat">-36.73827804</td>
+<td>“@CoolTableTweets: Let's all tweet our #UnpopularOpinion”
+
+Kendrick Lamar is prune juice</td>
+</tr>
+<tr id = "coord92">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>Night Of The Living Junkies★ ☛Kendrick Lamar☚ ★O(verly) D(edicated)★</td>
+</tr>
+<tr id = "coord93">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>She Needs Me {RMX} ft Dom Kennedy &amp; Murs *BONUS★ ☛Kendrick Lamar☚ ★O(verly) D(edicated)★</td>
+</tr>
+<tr id = "coord94">
+<td id = "lng">2.31775037</td><td id = "lat">49.0059639</td>
+<td>Ignorance is bliss - Kendrick Lamar</td>
+</tr>
+<tr id = "coord95">
+<td id = "lng">2.18999134</td><td id = "lat">48.89825849</td>
+<td>Kendrick Lamar &amp; Drake - Poetic Justice</td>
+</tr>
+<tr id = "coord96">
+<td id = "lng">-79.5487136</td><td id = "lat">43.7043513</td>
+<td>@JVReemer21 @KlipschAudioCAN i - Kendrick Lamar. Simple premise but always a good ego booster, especially pregame.</td>
+</tr>
+<tr id = "coord97">
+<td id = "lng">-79.5488844</td><td id = "lat">43.7043614</td>
+<td>@JVReemer21 @KlipschAudioCAN Backseat Freestyle - Kendrick Lamar. That song will get you pumped.</td>
+</tr>
+<tr id = "coord98">
+<td id = "lng">-74.17352927</td><td id = "lat">40.74279433</td>
+<td>“@Manstagram_: Kendrick Lamar's Hair look like a Concert Crowd http://t.co/3yPraT6zaI” @M_Kaayy</td>
+</tr>
+<tr id = "coord99">
+<td id = "lng">-61.047547</td><td id = "lat">14.6190133</td>
+<td>Kendrick Lamar - Bitch, Don't kill My Vibe 🎶</td>
+</tr>
+<tr id = "coord100">
+<td id = "lng">-120.672086</td><td id = "lat">35.612212</td>
+<td>Kendrick Lamar - i http://t.co/lObXWZAWq4</td>
+</tr>
+<tr id = "coord101">
+<td id = "lng">-58.2085389</td><td id = "lat">-34.762064</td>
+<td>@LuMeddina Buscala jaja Hood gone love it de kendrick lamar con jay z</td>
+</tr>
+<tr id = "coord102">
+<td id = "lng">-120.48896626</td><td id = "lat">37.33829568</td>
+<td>Kendrick Lamar - I love myself</td>
+</tr>
+<tr id = "coord103">
+<td id = "lng">-84.32200005</td><td id = "lat">39.80916033</td>
+<td>Or Good Kid; Born Sinner “@SchamaNoel: J Cole &amp; Kendrick Lamar's COLLAB album should be called "Good Kid; Cole World"”</td>
+</tr>
+<tr id = "coord104">
+<td id = "lng">-84.32200005</td><td id = "lat">39.80916033</td>
+<td>Or Good Kid; Born Sinner “@SchamaNoel: J Cole &amp; Kendrick Lamar's COLLAB album should be called "Good Kid; Cole World"”</td>
+</tr>
+<tr id = "coord105">
+<td id = "lng">-76.94545559</td><td id = "lat">38.98606486</td>
+<td>RT @SixLasers: “@iDntWearCondoms: RT @Ivan_splash: Gucci Mane&gt;Kendrick Lamar” lol http://t.co/lvp2rXddqQ</td>
+</tr>
+<tr id = "coord106">
+<td id = "lng">31.1511624</td><td id = "lat">-17.74004287</td>
+<td>Poetic Justice - Kendrick Lamar , Drake .</td>
+</tr>
+<tr id = "coord107">
+<td id = "lng">8.5392071</td><td id = "lat">12.0258852</td>
+<td>Lol brother Kendrick Lamar</td>
+</tr>
+<tr id = "coord108">
+<td id = "lng">-60.963639</td><td id = "lat">14.6154936</td>
+<td># Kendrick lamar Swimming Pools Drank🍺#</td>
+</tr>
+<tr id = "coord109">
+<td id = "lng">-80.37741139</td><td id = "lat">25.75364</td>
+<td>going from kendrick lamar and kayne to bowling for soup and good charlotte without hesitation 🎵 #0to100realquick</td>
+</tr>
+<tr id = "coord110">
+<td id = "lng">-91.6002875</td><td id = "lat">41.6442552</td>
+<td>The Art Of Peer Pressure-  Kendrick Lamar &gt;&gt;&gt;</td>
+</tr>
+<tr id = "coord111">
+<td id = "lng">-104.8061036</td><td id = "lat">39.788706</td>
+<td>The Spiteful Chant ft. ScHoolBoy Q - Kendrick Lamar &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</td>
+</tr>
+<tr id = "coord112">
+<td id = "lng">4.28815224</td><td id = "lat">52.07425564</td>
+<td>Kendrick Lamar feat Dr Dre - Compton</td>
+</tr>
+<tr id = "coord113">
+<td id = "lng">4.2881823</td><td id = "lat">52.07426448</td>
+<td>This is King Kendrick Lamar ◽️</td>
+</tr>
+<tr id = "coord114">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>Ronald Reagan Era★ ☛Kendrick Lamar☚ ★Section.80★</td>
+</tr>
+<tr id = "coord115">
+<td id = "lng">-46.6907845</td><td id = "lat">-23.4592053</td>
+<td>"@JASMINEVILLEGAS: Jasminators check us out on @idolator :) http://t.co/MZLEiiznpk"</td>
+</tr>
+<tr id = "coord116">
+<td id = "lng">-76.39735468</td><td id = "lat">37.0413598</td>
+<td>“@Dinerowave_: My Top 5
+1. Fabolous 
+2. Joey Bada$$ 
+3. Tory Lanez
+4. Kendrick Lamar
+5. J Cole 
+🔥💯🔥💯🔥💯🔥💯🔥💯🔥💯🔥” fab 💗💗💗</td>
+</tr>
+<tr id = "coord117">
+<td id = "lng">-84.060779</td><td id = "lat">41.892859</td>
+<td>@OnlyHipHopFacts @FGonz14 look like Kendrick Lamar got allergies bruh</td>
+</tr>
+<tr id = "coord118">
+<td id = "lng">-81.70501666</td><td id = "lat">41.39325477</td>
+<td>Kendrick Lamar is the best.</td>
+</tr>
+<tr id = "coord119">
+<td id = "lng">-118.0714461</td><td id = "lat">34.00518259</td>
+<td>@ThaWorldsEnemy  Kendrick Lamar Says Eminem "Definitely" Influenced His Style, Calls Him A "Genius"   http://t.co/2dzvSBEC1u</td>
+</tr>
+<tr id = "coord120">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>Fuckin Problem (prod. 40) (feat. 2Chainz, Drake, Kendrick Lamar)★ ☛A$AP Rocky☚ ★Music★</td>
+</tr>
+<tr id = "coord121">
+<td id = "lng">-77.8152166</td><td id = "lat">35.9263676</td>
+<td>Tf was Kendrick Lamar thinking with this I love myself song smh is he coming out the closet or sumn😧😅😕💀</td>
+</tr>
+<tr id = "coord122">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>The Art Of Peer Pressure★ ☛Kendrick Lamar☚ ★Good Kid M.A.A.D City-(Deluxe Edition)★</td>
+</tr>
+<tr id = "coord123">
+<td id = "lng">-1.22115722</td><td id = "lat">52.77477477</td>
+<td>I Do This {RMX} ft U.N.I Skeme, Brown (of Sore Losers) *BONUS★ ☛Kendrick Lamar☚ ★O(verly) D(edicated)★</td>
+</tr>
+<tr id = "coord124">
+<td id = "lng">28.1804499</td><td id = "lat">-25.8470382</td>
+<td>I'm not a Hip Hop fan but Schoolboy Q ft Kendrick Lamar &amp; AB Soul_Blessed.  Excellent ish</td>
+</tr>
+<tr id = "coord125">
+<td id = "lng">-101.8126279</td><td id = "lat">33.5678752</td>
+<td>Kendrick Lamar / Jay Rock RT "@FrancisJstn: 8. Who's Album Are You Anticipating The Most?"</td>
+</tr>
+<tr id = "coord126">
+<td id = "lng">-101.8126579</td><td id = "lat">33.5678645</td>
+<td>😂😂😂"@willyroast2: Kendrick Lamar makes music for the Lil homies who was on baby boy that jumped Jodie for his bike cuz"</td>
+</tr>
+<tr id = "coord127">
+<td id = "lng">-74.93948482</td><td id = "lat">39.94442633</td>
+<td>@wernerhardcore Uno de los que más me gusta ahora es Kendrick Lamar, échale un oído si te apetece...</td>
+</tr>
+<tr id = "coord128">
+<td id = "lng">-85.59865723</td><td id = "lat">42.28953007</td>
+<td>It's funny knowing Kendrick Lamar made the song Swimming Pools to warn everyone the bad effects of alcohol, yet everyone drinks to it..</td>
+</tr>
+<tr id = "coord129">
+<td id = "lng">-81.68058802</td><td id = "lat">41.50288476</td>
+<td>Just found out Kendrick Lamar and Kevin Hart are hosting a watch party outside of the Q for the home opener! Let the fun begin!!! 🍻 #CAVS</td>
+</tr>
+<tr id = "coord130">
+<td id = "lng">-95.47458677</td><td id = "lat">29.70119938</td>
+<td>I remember I went to the kendrick Lamar concert at warehouselive a couple years ago and I damn near fell asleep standing up.</td>
+</tr>
+<tr id = "coord131">
+<td id = "lng">28.30991</td><td id = "lat">-15.44036</td>
+<td>Kendrick Lamar's "Made in America concert" NEAT</td>
+</tr>
+<tr id = "coord132">
+<td id = "lng">-60.78950165</td><td id = "lat">11.17414974</td>
+<td>#np bitch don't kill my vibe- Kendrick Lamar 🎶 I am a dinner whose probably gonna sin again, Lord forgive me for things I don't understand</td>
+</tr>
+<tr id = "coord133">
+<td id = "lng">-111.0102737</td><td id = "lat">32.1506554</td>
+<td>@RamBoutIt if there was such thing as rap stuttering Kendrick Lamar would have that rap impediment</td>
+</tr>
+<tr id = "coord134">
+<td id = "lng">-46.5764152</td><td id = "lat">-23.4984864</td>
+<td>#QueroNoTVZ That's Me Right There - Jasmine V feat. Kendrick Lamar</td>
+</tr>
+<tr id = "coord135">
+<td id = "lng">-81.5874486</td><td id = "lat">41.4666677</td>
+<td>Kendrick Lamar - Swimming Pools (Drank) (Clean): http://t.co/OEgHzEWQEn</td>
+</tr>
+<tr id = "coord136">
+<td id = "lng">-80.77052221</td><td id = "lat">35.36498971</td>
+<td>My science teacher was playing Kendrick Lamar yesterday 👌</td>
+</tr>
+<tr id = "coord137">
+<td id = "lng">-73.95056855</td><td id = "lat">40.63560854</td>
+<td>Opposites attract- Kendrick Lamar</td>
+</tr>
+<tr id = "coord138">
+<td id = "lng">-122.50733997</td><td id = "lat">48.70859769</td>
+<td>https://t.co/tffkeiS1EK :') ✨</td>
+</tr>
+<tr id = "coord139">
+<td id = "lng">-111.93126838</td><td id = "lat">33.42084058</td>
+<td>“@HitsonHits: Kendrick Lamar dropped "Good Kid, M.A.A.D City" two years ago today http://t.co/uTvf5ZHnLu”
+
+HOLY SHIT DAWG</td>
+</tr>
+<tr id = "coord140">
+<td id = "lng">15.33867043</td><td id = "lat">59.26233957</td>
+<td>Kendrick Lamar "i" + NBA Season= sant</td>
+</tr>
+<tr id = "coord141">
+<td id = "lng">-1.93750919</td><td id = "lat">52.48336104</td>
+<td>Jealous kendrick Lamar and Fredo Santana is mad tune</td>
+</tr>
+<tr id = "coord142">
+<td id = "lng">2.774634</td><td id = "lat">48.742494</td>
+<td>http://t.co/LFkCcl6GCe</td>
+</tr>
+<tr id = "coord143">
+<td id = "lng">-1.283375</td><td id = "lat">5.12236667</td>
+<td>J Cole - forbidden fruit ft Kendrick Lamar</td>
+</tr>
+<tr id = "coord144">
+<td id = "lng">101.5762816</td><td id = "lat">3.0641482</td>
+<td>kendrick lamar - poetic justice</td>
+</tr>
+<tr id = "coord145">
+<td id = "lng">-81.6527036</td><td id = "lat">32.7669996</td>
+<td>Kendrick Lamar x i 🔥</td>
+</tr>
+<tr id = "coord146">
+<td id = "lng">30.97176515</td><td id = "lat">-17.91392197</td>
+<td>#np money trees - kendrick Lamar</td>
+</tr>
+<tr id = "coord147">
+<td id = "lng">-80.5939953</td><td id = "lat">32.8342094</td>
+<td>Bruh Kendrick lamar videos be killn me bo lol smh</td>
+</tr>
+<tr id = "coord148">
+<td id = "lng">-73.8853445</td><td id = "lat">40.8540278</td>
+<td>XXL Mobile - Today In Hip-Hop: Kendrick Lamar Releases 'good kid, m.A.A.d City' http://t.co/FG2IfDX1yw</td>
+</tr>
+<tr id = "coord149">
+<td id = "lng">17.0706582</td><td id = "lat">48.1472736</td>
+<td>This jam is too hot eish "@HomeboyzRadio: #NP i | Kendrick Lamar #Class124 @raquel_soni" #HappyMafeelingsThursday</td>
+</tr>
+<tr id = "coord150">
+<td id = "lng">-83.5112628</td><td id = "lat">36.1151271</td>
+<td>Now or Never// Kendrick Lamar
+
+Morning motivational music hehehe</td>
+</tr>
+<tr id = "coord151">
+<td id = "lng">6.12385456</td><td id = "lat">46.20665003</td>
+<td>Kendrick Lamar - Hiii Power 🎶</td>
+</tr>
+<tr id = "coord152">
+<td id = "lng">7.5189778</td><td id = "lat">9.06280501</td>
+<td>Kendrick Lamar’s ‘i’ to be used as theme song for 2014-2015 NBA season http://t.co/uMP2hosrPn via @radarngr</td>
+</tr>
+<tr id = "coord153">
+<td id = "lng">9.06280501</td><td id = "lat">7.5189778</td>
+<td>Kendrick Lamar’s ‘i’ to be used as theme song for 2014-2015 NBA season http://t.co/uMP2hosrPn via @radarngr</td>
+</tr>
+<tr id = "coord154">
+<td id = "lng">28.253662</td><td id = "lat">-15.457013</td>
+<td>Buy The World x Mike Will w/ Lil Wayne .. Future .. Kendrick Lamar</td>
+</tr>
+<tr id = "coord155">
+<td id = "lng">7.5189778</td><td id = "lat">9.06280501</td>
+<td>Kendrick Lamar’s ‘i’ to be used as theme song for 2014-2015 NBA season http://t.co/uMP2hosrPn via @radarngr</td>
+</tr>
+<tr id = "coord156">
+<td id = "lng">-119.091579</td><td id = "lat">35.3288121</td>
+<td>Who got the best verse in fuckin problems? Drake or Kendrick Lamar</td>
+</tr>
+<tr id = "coord157">
+<td id = "lng">18.4855038</td><td id = "lat">-33.9513561</td>
+<td>"If I Smoke One I'll Probably Come Up With A Quote, So Heavy You'll Forget Every Album You Heard From H.O.V.A" -Kendrick Lamar</td>
+</tr>
+<tr id = "coord158">
+<td id = "lng">18.4953556</td><td id = "lat">-33.9614852</td>
+<td>AB-Soul feat Kendrick Lamar - Turn Me Up (Prod. By Tae-Beast) 
+
+#TBT</td>
+</tr>
+<tr id = "coord159">
+<td id = "lng">2.4325852</td><td id = "lat">49.2630419</td>
+<td>Kendrick Lamar c'est trop mon homme sa voix me fait trop bercer! 😘😍</td>
+</tr>
+<tr id = "coord160">
+<td id = "lng">3.37291073</td><td id = "lat">6.55947035</td>
+<td>Runtown really looks like Kendrick Lamar.</td>
+</tr>
+<tr id = "coord161">
+<td id = "lng">-75.9709424</td><td id = "lat">40.3581243</td>
+<td>Fragile - Tech N9ne &amp; Kendrick Lamar 🎧🔥</td>
+</tr>
+<tr id = "coord162">
+<td id = "lng">3.09852473</td><td id = "lat">45.7751437</td>
+<td>Kendrick Lamar - i 🎶</td>
+</tr>
+<tr id = "coord163">
+<td id = "lng">0.0</td><td id = "lat">0.0</td>
+<td>► Jeezy - Holy Ghost Ft. Kendrick Lamar</td>
+</tr>
+<tr id = "coord164">
+<td id = "lng">5.6055548</td><td id = "lat">6.393733</td>
+<td>Kendrick Lamar - opposites attract</td>
+</tr>
+<tr id = "coord165">
+<td id = "lng">-75.1747564</td><td id = "lat">4.4488158</td>
+<td>Bitch dont Kill my vibe - kendrick Lamar 😱🙌🎶</td>
+</tr>
+<tr id = "coord166">
+<td id = "lng">-76.30135222</td><td id = "lat">36.88809163</td>
+<td>Kendrick Lamar Radio &amp; Arizona Tea ☺️</td>
+</tr>
+<tr id = "coord167">
+<td id = "lng">-117.64211759</td><td id = "lat">34.11094262</td>
+<td>Kanye West 
+Kid Cudi 
+Kendrick Lamar
+
+my fav</td>
+</tr>
+<tr id = "coord168">
+<td id = "lng">-85.9591114</td><td id = "lat">39.8105214</td>
+<td>i - Kendrick Lamar http://t.co/Ti9SGg2d8I #nowplaying #Spotify</td>
+</tr>
+<tr id = "coord169">
+<td id = "lng">-117.6804788</td><td id = "lat">34.132049</td>
+<td>Do girls think Kendrick Lamar is cute?</td>
+</tr>
+<tr id = "coord170">
+<td id = "lng">-85.9591114</td><td id = "lat">39.8105214</td>
+<td>Fucking Problem - A$AP Rocky, Drake, 2 Chainz, Kendrick Lamar http://t.co/kGZitmFZRy #nowplaying #Spotify</td>
+</tr>
+<tr id = "coord171">
+<td id = "lng">-117.16439978</td><td id = "lat">33.59989185</td>
+<td>i - Kendrick Lamar</td>
+</tr>
+<tr id = "coord172">
+<td id = "lng">-118.2534267</td><td id = "lat">33.9932363</td>
+<td>kendrick lamar // bitch don't kill my vibe</td>
+</tr>
+<tr id = "coord173">
+<td id = "lng">-80.2265901</td><td id = "lat">26.2157342</td>
+<td>"@inhalethisjay: “@iDntWearCondoms: The only way Kendrick Lamar dropped a classic album is if he was holding somebody else CD”yikes"jeesh</td>
+</tr>
+<tr id = "coord174">
+<td id = "lng">78.3517056</td><td id = "lat">17.4666008</td>
+<td>Criminally overrated "@XXL: Today In Hip-Hop: Kendrick Lamar Releases good kid, m.A.A.d City http://t.co/B2jS2gaQNi http://t.co/syUL8KxOqU"</td>
+</tr>
+<tr id = "coord175">
+<td id = "lng">-80.21327376</td><td id = "lat">40.52224256</td>
+<td>NEWEST MUSIC FROM
+
+ASAP Rocky
+Joey Bada$$
+Kendrick Lamar
+J. Cole
+Big K.R.I.T.
+Big Sean
+Childish Gambino 
+
+https://t.co/DX0EFreyRW</td>
+</tr>
+<tr id = "coord176">
+<td id = "lng">-81.6010091</td><td id = "lat">31.8654659</td>
+<td>Please Tell Me You're Trolling "@iDntWearCondoms: The only way Kendrick Lamar dropped a classic album is if he was holding somebody else CD"</td>
+</tr>
+<tr id = "coord177">
+<td id = "lng">-73.98605484</td><td id = "lat">40.61640174</td>
+<td>I LOVE KENDRICK LAMAR FR 💪🔥</td>
+</tr>
+</table>
+</div>
+	<div id="par">
+	<h1 align="center"><img src="ken.png" align="left"/>The Word On Kendrick Lamar</h1>
+	
+	<p>The map above shows tweets that mention <a href="http://www.kendricklamar.com/" target="_blank">Kendrick Lamar</a>. Lamar is a rapper born out of Compton, California. The West Coast rapper made a significant appearance in 2010 with his mixtape <em>"Overly Dedicated."</em> In the next year, Lamar went on to release his debut album <em>"Section.80,"</em> which hit the number one spot on US Billboard's "Top Heatseekers Albums." Since then, Lamar has released his most popular album "Good Kid, M.A.A.D City," which was Grammy nominated for "Best Rap Album" and "Album of the Year" in 2014.</b>
+	</p>
+	<p>In the map above, the marker of Kendrick Lamar represents a tweet from twitter that mentions the rapper's name. As previously stated, Lamar is based in California, but from the map above, one could see that many more tweets about him are found on the east coast of the U.S. If the map is zoomed out enough, it is apparent that Kendrick Lamar's name floats all over the globe, not just the U.S. Even though Lamar hasn't released a mixtape or album since 2012, he still manages to keep his name buzzing worldwide. With each passing month fans grow in anticipation of his next project, especially after Lamar released his latest single "<strong>i</strong>" <a href="https://www.youtube.com/watch?v=donS3zZZTu8" target="_blank">(click here to listen)<a/>. That single will join 17 other Hip-Hop songs to be officially used by the NBA in the upcoming 2014-2015 season.
+	</p>
+		</div>
+
+
+</body>
